@@ -43,26 +43,43 @@ app.configure(function(){
   app.set('require-account-verification', config.requireAccountVerification);
 
   //smtp settings
-  app.set('smtp-from-name', config.smtp.from.name);
-  app.set('smtp-from-address', config.smtp.from.address);
-  app.set('smtp-credentials', config.smtp.credentials);
+  if(config.smtp && config.smtp.from && config.smtp.from.name)
+  	app.set('smtp-from-name', config.smtp.from.name);
+
+  if(config.smtp && config.smtp.from && config.smtp.from.address)
+    app.set('smtp-from-address', config.smtp.from.address);
+
+  if(config.smtp && config.smtp.credentials)
+    app.set('smtp-credentials', config.smtp.credentials);
+
 
   //twitter settings
-  app.set('twitter-oauth-key', config.oauth.twitter.key);
-  app.set('twitter-oauth-secret', config.oauth.twitter.secret);
+  if(config.oauth && config.oauth.twitter && config.oauth.twitter.key)
+    app.set('twitter-oauth-key', config.oauth.twitter.key);
+
+  if(config.oauth && config.oauth.twitter && config.oauth.twitter.secret)
+  	app.set('twitter-oauth-secret', config.oauth.twitter.secret);
 
   //github settings
-  app.set('github-oauth-key', config.oauth.github.key);
-  app.set('github-oauth-secret', config.oauth.github.secret);
+  if(config.oauth && config.oauth.github && config.oauth.github.key)
+    app.set('github-oauth-key', config.oauth.github.key);
+
+  if(config.oauth && config.oauth.github && config.oauth.github.secret)
+  	app.set('github-oauth-secret', config.oauth.github.secret);
 
   //facebook settings
-  app.set('facebook-oauth-key', config.oauth.facebook.key);
-  app.set('facebook-oauth-secret', config.oauth.facebook.secret);
+  if(config.oauth && config.oauth.facebook && config.oauth.facebook.key)
+  	app.set('facebook-oauth-key', config.oauth.facebook.key);
+
+  if(config.oauth && config.oauth.facebook && config.oauth.facebook.secret)
+  	app.set('facebook-oauth-secret', config.oauth.facebook.secret);
 
   //middleware
   app.use(express.favicon(__dirname + '/public/favicon.ico'));
   app.use(express.logger('dev'));
   app.use(express.static(path.join(__dirname, 'public')));
+  //Static route so that Angular JS files can be accessed
+  app.use('/angular/js', express.static(path.join(__dirname, 'angular/js')));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.cookieParser());
