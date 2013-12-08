@@ -1,12 +1,13 @@
 doctype 5
-html
+html(ng-app="drywall-angular")
   head
     block head
       title #{title}
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     link(rel='stylesheet', href='/layouts/core.min.css?#{cacheBreaker}')
+    script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js')
     block neck
-  body
+  body(ng-controller="StaticController", ng-cloak)
     div.navbar.navbar-default.navbar-fixed-top
       div.container
         div.navbar-header
@@ -28,23 +29,35 @@ html
 
     div.page
       div.container
-        block body
-
-    div.footer
-      div.container
-        div.inner
-          span.copyright.pull-right
-            &#169; #{copyrightYear} #{copyrightName}
-          ul.links
-            li: a(href='/') Home
-            li: a(href='/logout/') Sign Out
-          div.clearfix
+        div.menu
+           div.reveal-animation(ng-include='\'/angular/partials/menu\'')
+        div.content(class="ng-view reveal-animation")
+    
 
     div.ajax-spinner
       img(src='/media/ajax-pulse.gif')
 
-    //if lte IE 9
-      script(src='/layouts/ie-sucks.min.js?#{cacheBreaker}')
-    script(src='/layouts/core.min.js?#{cacheBreaker}')
+    div.loadingContainer
+      div.loading
 
+    //if lte IE 9
+    script(src='/layouts/ie-sucks.min.js?#{cacheBreaker}')
+    script(src='/layouts/core.min.js?#{cacheBreaker}')
+    script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular-route.min.js')
+    script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular-animate.js')
+
+    script(src='//cdn.jsdelivr.net/noty/2.1.0/jquery.noty.js')
+    script(src='//cdn.jsdelivr.net/noty/2.1.0/themes/default.js')
+    script(src='//cdn.jsdelivr.net/noty/2.1.0/layouts/inline.js')
+    script(src='//cdn.jsdelivr.net/noty/2.1.0/layouts/bottom.js')
+    script(src='//cdn.jsdelivr.net/noty/2.1.0/layouts/topCenter.js')
+    script(src='//cdn.jsdelivr.net/noty/2.1.0/layouts/top.js')
+    script(src='//cdn.jsdelivr.net/noty/2.1.0/layouts/bottomCenter.js')
+
+    script(src='/angular/js/app.js')
+    script(src='/angular/js/services.js')
+    script(src='/angular/js/controllers.js')
+    script(src='/angular/js/filters.js')
+    script(src='/angular/js/directives.js')
+    
     block feet
