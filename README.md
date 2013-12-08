@@ -1,10 +1,8 @@
-Drywall
-=============
+Drywall Angular
+===============
 
-A website and user system for Node.js. What you create with Drywall is more important than Drywall. [See a bird's eye view.](http://jedireza.github.io/drywall/)
+A website and user system for Node.js using Angular JS and Jade based on Drywall (by jedireza). What you create with Drywall Angular is more important than Drywall Angular. [See a bird's eye view.](http://vchatterji.github.io/drywall/)
 
-[![Dependency Status](https://david-dm.org/jedireza/drywall.png)](https://david-dm.org/jedireza/drywall)
-[![devDependency Status](https://david-dm.org/jedireza/drywall/dev-status.png)](https://david-dm.org/jedireza/drywall#info=devDependencies)
 
 Technology
 ------------
@@ -17,9 +15,13 @@ Technology
 | Passport      | Underscore.js  |             |
 | Async         | Font-Awesome   |             |
 | EmailJS       | Moment.js      |             |
+|               | Angular JS     |             |
+|               | Noty           |             |
 
 Live Demos
 ------------
+
+We do not have any live demos of Drywall Angular, but you can see the demos of the original Drywall project by jedireza below:
 
 | Platform                       | Username | Password |
 | ------------------------------ | -------- | -------- |
@@ -44,7 +46,7 @@ Installation
 ------------
 
 ```bash
-$ git clone git@github.com:jedireza/drywall.git && cd ./drywall
+$ git clone git@github.com:vchatterji/drywall.git && cd ./drywall
 $ npm install
 $ mv ./config.example.js ./config.js #set mongodb and email credentials
 $ grunt
@@ -78,6 +80,17 @@ Now just use the reset password feature to set a password.
 
 Login. Customize. Enjoy.
 
+Single Page Application Customization
+-------------------------------------
+After logging in to the system, the user is presented with an SPA for core functionality.
+
+ - The client side (Angular) routes are defined in /angular/js/app.js
+ - Angular controllers, services, directives and filters can also be found in /angular/js
+ - The partials loaded by the routes above are located in /angular/partials
+ - The menu shown on the left is loaded from /angular/partials/menu.jade
+
+The core functionality can be customized by adding more routes, partials and changing the menu.jade file to include more links to the routes defined. 
+
 Philosophy
 ------------
 
@@ -99,10 +112,10 @@ Features
  - Admin groups with shared permission settings.
  - Administrator level permissions that override group permissions.
  - Global admin quick search component.
+ - Single Page Application using Angular JS (for the account page)
+ - Loading animation while performing XHR Request using Noty
 
 License
 ------------
 
 MIT
-
-[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/d41f60f22a2148e2e2dc6b705cd01481 "githalytics.com")](http://githalytics.com/jedireza/drywall)
