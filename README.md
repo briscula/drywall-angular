@@ -1,7 +1,7 @@
 Drywall Angular
 ===============
 
-A website and user system for Node.js using Angular JS and Jade based on Drywall (by jedireza). What you create with Drywall Angular is more important than Drywall Angular. [See a bird's eye view.](http://vchatterji.github.io/drywall/)
+A website and user system for Node.js using Angular JS and Jade based on [Drywall by jedireza](https://github.com/jedireza/drywall). What you create with Drywall Angular is more important than Drywall Angular. [See a bird's eye view.](http://vchatterji.github.io/drywall/)
 
 
 Technology
@@ -21,7 +21,7 @@ Technology
 Live Demos
 ------------
 
-We do not have any live demos of Drywall Angular, but you can see the demos of the original Drywall project by jedireza below:
+We do not have any live demos of Drywall Angular, but you can see the demos of the original [Drywall by jedireza](https://github.com/jedireza/drywall) below:
 
 | Platform                       | Username | Password |
 | ------------------------------ | -------- | -------- |
