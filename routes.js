@@ -156,6 +156,12 @@ exports = module.exports = function(app, passport) {
   app.get('/account/settings/facebook/callback/', require('./views/account/settings/index').connectFacebook);
   app.get('/account/settings/facebook/disconnect/', require('./views/account/settings/index').disconnectFacebook);
 
+  //Added route for Angular partials
+  app.get('/angular/partials/:name', function(req, res) {
+	  var name = req.params.name;
+	  res.render('../angular/partials/' + name);
+  });
+
   //route not found
   app.all('*', require('./views/http/index').http404);
 };
