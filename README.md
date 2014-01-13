@@ -4,6 +4,25 @@ Drywall Angular
 A website and user system for Node.js using Angular JS and Jade based on [Drywall by jedireza](https://github.com/jedireza/drywall). What you create with Drywall Angular is more important than Drywall Angular. [See a bird's eye view.](http://vchatterji.github.io/drywall/)
 
 
+What's different from Drywall?
+-----------------------------
+This has angular to start of with. Some sample controllers can be found in angular/js and partials can be found in angular/partials. The switching between views is animated. During the animation, a Noty notification is displayed at the top of the page. The Single Page Appilication section described next is all new and not in the original Drywall project. This is a **small** project that let's you use Angular to begin with. It's nothing **major**. 
+
+
+Single Page Application Customization
+-------------------------------------
+After logging in to the system, the user is presented with an SPA for core functionality.
+
+ - The client side (Angular) routes are defined in /angular/js/app.js
+ - Angular controllers, services, directives and filters can also be found in /angular/js
+ - The partials loaded by the routes above are located in /angular/partials
+ - The menu shown on the left is loaded from /angular/partials/menu.jade
+ - Switching between views is animated
+ - A nice little note appears when switching between views
+
+The core functionality can be customized by adding more routes, partials and changing the menu.jade file to include more links to the routes defined.
+
+
 Technology
 ------------
 
@@ -80,16 +99,6 @@ Now just use the reset password feature to set a password.
 
 Login. Customize. Enjoy.
 
-Single Page Application Customization
--------------------------------------
-After logging in to the system, the user is presented with an SPA for core functionality.
-
- - The client side (Angular) routes are defined in /angular/js/app.js
- - Angular controllers, services, directives and filters can also be found in /angular/js
- - The partials loaded by the routes above are located in /angular/partials
- - The menu shown on the left is loaded from /angular/partials/menu.jade
-
-The core functionality can be customized by adding more routes, partials and changing the menu.jade file to include more links to the routes defined. 
 
 Philosophy
 ------------
